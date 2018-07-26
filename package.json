@@ -1,0 +1,13 @@
+{
+    "name": "split-screen-loading-intro-screen",
+    "version": "1.0.0",
+    "description": "This repo accompanies the tutorial: https://www.creativebloq.com/news/create-an-animated-split-screen-loading-intro",
+    "main": "gulpfile.js",
+    "author": "Nuno Rodrigues <nuno.r.rodrigues@outlook.pt>",
+    "license": "MIT",
+    "devDependencies": {
+        "browser-sync": "^2.8.2",
+        "gulp": "^3.9.0",
+        "gulp-sass": "^2.0.4"
+    }
+}
