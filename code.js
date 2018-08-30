@@ -8,7 +8,8 @@ var area 					= document.getElementById('area'),
 	keysPressed 			= {},
 	distancePerIteration 	= piece.offsetWidth,
 	direction				= 'start',
-	speedMove				= '300',
+	speedMove				= 400,
+	increaseSpeed			= 30,
 	gameStatus 				= 0,
 	snakeElement			= {},
 	snakeArray				= [],
@@ -65,6 +66,10 @@ function detectCollision(){
 		clone.id 	= piece.id + (points-1);
 		area.appendChild(clone);
 		newPosition();
+		clearInterval(moveInterval);
+		speedMove = speedMove - increaseSpeed;
+		console.log(speedMove);
+		moveInterval = setInterval(function(){ movePiece() }, speedMove);
 	}
 }
 
@@ -80,6 +85,7 @@ function newPosition(){
 
 // Move snake
 function movePiece(){
+
 	var currentPositionLeft = piece.offsetLeft;
 		currentPositionTop 	= piece.offsetTop;
 
@@ -100,6 +106,7 @@ function movePiece(){
 	}
 }
 
+// Add positions of snake to array, once eat pieces add one more position to array
 function addPosToArray(direction, points){
 	if (direction === 'start' || direction === 'right'){
 		moveLeft = moveLeft + distancePerIteration;
@@ -117,10 +124,12 @@ function addPosToArray(direction, points){
 	snakeElement = {left: moveLeft, top: moveDown};
 	snakeArray.push(snakeElement);
 	
-	if (snakeArray.length > points + 2){
+	// add current and previous positions of the snake and remove the first
+	if (snakeArray.length > points + 2) {
 		snakeArray.shift();
 	}
 
+	// after eat the first piece, we clone the snake and make the tail
 	if (points > 0) {
 		for (let i = 0; i < points; i++) {
 			var clone = document.getElementById('piece' + i);
@@ -128,8 +137,6 @@ function addPosToArray(direction, points){
 			clone.style.top 	= snakeArray[i+1].top + 'px';	
 		}
 	}
-
-	console.log(snakeArray);
 }
 
 // Lose information
