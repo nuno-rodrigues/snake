@@ -2,29 +2,37 @@
 $color-primary: tomato;
 $color-secondary: lime;
 $color-wall: limegreen;
+$color-warning: red;
 
 $size-element: 15px;
 
 //styles
+#totalPieces {
+  margin-bottom: 10px;
+}
+#info {
+  margin: 10px 0;
+  color: $color-warning;
+  a {
+    color: $color-warning;
+  }
+}
 #area {
 	position: relative;
 	width: 300px;
 	height: 300px;
-	background-color: $color-secondary;
-	#piece {
-		z-index: 2;
-		position: absolute;
-		width: $size-element;
+  background-color: $color-secondary;
+  .piece-cfg {
+    z-index: 2;
+    position: absolute;
+    width: $size-element;
 		height: $size-element;
 		background-color: $color-primary;
-	}
+  }
 	#add-piece {
 		position: absolute;
 		width: $size-element;
 		height: $size-element;
 		background-color: $color-wall;
 	}
-}
-#totalPieces {
-	margin-bottom: 10px;
 }
