@@ -1,12 +1,38 @@
-# split-screen-loading-intro-screen
+Javascript Snake
+=================
 
-Split screen loading intro screen with Gulp and SASS
+An HTML5 Snake Game
 
-Base Link: https://www.creativebloq.com/news/create-an-animated-split-screen-loading-intro 
+ * [play the game](not avaiable yet)
+ * view the [source](https://github.com/nuno-rodrigues/snake)
 
-Usage: 
+SUPPORTED BROWSERS
+==================
 
-1) npm i
-2) gulp
+ - I dont test yet on different browsers, just in Chrome
 
-Feel free to comment and update
+KNOWN ISSUES
+============
+
+ - No issues for now
+
+DEVELOPMENT
+===========
+
+The game is split into multiple source files (.js, .css, .png and .jpg):
+
+    code.js                             # the unified javascript file
+    styles.css                          # the unified css stylesheet
+    img/snake-graphics-small.png        # snake spritesheet
+    img/background.jpg                  # main image background
+    img/arcade-machine-background.jpg   # arcade box 
+ 
+TODO
+====
+
+ * Dont have tasks for now 
+
+License
+=======
+
+[MIT](http://en.wikipedia.org/wiki/MIT_License) license.
