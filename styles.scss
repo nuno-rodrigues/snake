@@ -4,11 +4,30 @@ $color-secondary: lime;
 $color-wall: limegreen;
 $color-warning: red;
 
-$size-element: 15px;
+$size-element: 16px;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+.main-div {
+  // background-image: url('/img/arcade-machine-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  width: 640px;
+  height: 640px;
+}
 
 //styles
 #totalPieces {
-  margin-bottom: 10px;
+  position: absolute;
+  top: 455px;
+  left: 180px;
 }
 #info {
   margin: 10px 0;
@@ -19,20 +38,60 @@ $size-element: 15px;
 }
 #area {
 	position: relative;
-	width: 300px;
-	height: 300px;
-  background-color: $color-secondary;
+  width: 308px;
+  height: 235px;
+  top: 246px;
+  left: 172px;
+  // background-image: url('/img/background.jpg');
+  border: 1px solid white;
+  background-size: cover;
+  background-repeat: no-repeat;
   .piece-cfg {
     z-index: 2;
     position: absolute;
     width: $size-element;
-		height: $size-element;
-		background-color: $color-primary;
+    height: $size-element;
+    background-image: url('/img/snake-graphics-small.png');
+    background-repeat: no-repeat;
+    &.left{
+      background-position: -64px 0;
+    }
+		&.right{
+      background-position: -48px -16px;
+    }
+    &.down{
+      background-position: -64px -16px;
+    }
+    &.up{
+      background-position: -48px 0;
+    }
+    &.tail-left{
+      background-position: -48px -48px;
+    }
+    &.tail-right{
+      background-position: -64px -32px;
+    }
+    &.tail-down{
+      background-position: -64px -48px;
+    }
+    &.tail-up{
+      background-position: -48px -32px;
+    }
+    &.body-left,
+    &.body-right{
+      background-position: -16px 0;
+    }
+    &.body-down,
+    &.body-up{
+      background-position: -32px -16px;
+    }
   }
 	#add-piece {
 		position: absolute;
 		width: $size-element;
-		height: $size-element;
-		background-color: $color-wall;
+    height: $size-element;
+    background-image: url('/img/snake-graphics-small.png');
+    background-position: 0 -48px;
+    background-repeat: no-repeat;
 	}
 }

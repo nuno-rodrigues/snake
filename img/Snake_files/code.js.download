@@ -101,13 +101,12 @@ function moreSpeed() {
 
 // Set position of the new element to catch
 function newPosition(){
-	var topRandom 	= Math.floor(Math.random() * distancePerIteration + 1) * distancePerIteration,
-		leftRandom 	= Math.floor(Math.random() * distancePerIteration + 1) * distancePerIteration;
 
-	if (topRandom > maxValueHeight){
-		newPosition();
-		return false;
-	}
+	var topRandom 	= Math.floor(Math.random() * (maxValueHeight - distancePerIteration + 1)) + distancePerIteration,
+		leftRandom 	= Math.floor(Math.random() * (maxValueWidth - distancePerIteration + 1)) + distancePerIteration;
+
+	console.log(topRandom);
+	console.log(leftRandom);
 	
 	addPiece.style.top 		= topRandom + 'px';
 	addPiece.style.left 	= leftRandom + 'px';
@@ -166,7 +165,12 @@ function addPosToArray(direction, points){
 			clone.style.left 	= snakeArray[i+1].left + 'px';
 			clone.style.top 	= snakeArray[i+1].top + 'px';	
 			removeFace(clone);
-			clone.classList.add('tail-'+direction);
+			console.log('array'+(snakeArray.length-2));
+			if (i === (snakeArray.length-1)){
+				clone.classList.add('tail-'+direction);
+			} else {
+				clone.classList.add('body-'+direction);
+			}
 		}
 	}
 }
