@@ -121,11 +121,13 @@ function movePiece(){
 		
 	if (gameStatus != 1){ // finish game
 		if (direction === 'left' || direction === 'up'){
+			console.log('area1');
 			if (currentPositionLeft < distancePerIteration+10 ||
 				currentPositionTop < distancePerIteration+10) {
 				loseInfo();
 			}
 		} else if (direction === 'right' || direction === 'down' || direction === 'start'){
+			console.log('area1');
 			if (currentPositionLeft > maxValueWidth-distancePerIteration-10 ||
 				currentPositionTop > maxValueHeight-distancePerIteration-20) {
 				loseInfo();

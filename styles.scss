@@ -1,17 +1,14 @@
 //variables
-$color-primary: tomato;
-$color-secondary: lime;
-$color-wall: limegreen;
 $color-warning: red;
-
 $size-element: 16px;
 
 body {
+  font-family: 'Press Start 2P', cursive;
   margin: 0;
   padding: 0;
   background-color: black;
   color: white;
-  font-size: 20px;
+  font-size: 12px;
 }
 
 .main-div {
@@ -29,6 +26,9 @@ body {
   top: 455px;
   left: 180px;
 }
+#description {
+  margin-top: 10px;
+}
 #info {
   margin: 10px 0;
   color: $color-warning;
@@ -37,13 +37,13 @@ body {
   }
 }
 #area {
-	position: relative;
-  width: 308px;
-  height: 235px;
-  top: 246px;
-  left: 172px;
-  background-image: url('/img/background.jpg');
-  border: 1px solid white;
+  position: relative;
+  width: 302px;
+  height: 230px;
+  top: 242px;
+  left: 168px;
+  background-image: url(/img/background.jpg);
+  border: 1px solid #2d2b2c;
   background-size: cover;
   background-repeat: no-repeat;
   .piece-cfg {
